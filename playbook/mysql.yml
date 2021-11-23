@@ -2,4 +2,4 @@
   strategy: linear
   become: yes
   roles:
-    - ../roles/mysql8.0
+    - ../roles/mysql
