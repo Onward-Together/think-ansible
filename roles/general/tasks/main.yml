@@ -7,6 +7,8 @@
     name: "*"
     state: latest
     update_cache: yes
+  when:
+    - upgrade_all is defined
 
 - name: Update config multipath to fix spam log
   blockinfile:
