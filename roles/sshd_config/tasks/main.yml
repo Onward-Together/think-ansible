@@ -7,14 +7,14 @@
     group: root
     mode: '0644'
 
-- name: Allow zabbix-server access port zabbix-agent
+- name: Allow access sshd port with limit
   ufw:
     rule: limit
     proto: tcp
     port: '1122'
 
-- name: Restart zabbix-agent2 service
+- name: Restart sshd service
   systemd:
-    name: zabbix-agent2
+    name: sshd
     enabled: yes
     state: restarted
