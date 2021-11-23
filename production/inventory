@@ -40,3 +40,7 @@ ansible_ssh_port=1122
 
 [gitlab-runner]
 10.30.20.14
+
+# Jira
+[jira]
+10.30.20.100
