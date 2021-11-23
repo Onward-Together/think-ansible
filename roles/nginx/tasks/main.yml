@@ -30,3 +30,25 @@
     state: restarted
     enabled: yes
   when: check_nginx_config.rc == 0
+
+- name: Allow http access with backend
+  ufw:
+    rule: allow
+    proto: tcp
+    src: 10.30.20.0/24
+    port: '80'
+  when:
+    - role is defined
+    - role is "backend"
+
+- name: Allow http and https access with Loadbalancer
+  ufw:
+    rule: allow
+    proto: tcp
+    port: '{{ item }}'
+  loop:
+    - 80
+    - 443  
+  when:
+    - role is defined
+    - role is "lb"
