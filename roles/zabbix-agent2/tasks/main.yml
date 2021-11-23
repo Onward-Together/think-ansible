@@ -26,5 +26,5 @@
   ufw:
     rule: allow
     proto: tcp
-    src: 10.30.20.11
+    src: 10.30.20.16
     port: '10050'
