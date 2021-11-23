@@ -4,17 +4,21 @@ ansible_ssh_port=1122
 ### Gateway
 #[gateway-internet]
 #10.30.20.10
+#10.30.20.15
 
 ### LB
 [loadbalancer]
 10.30.20.20
+10.30.20.21
 
 ### Backend
 [php-backend]
 10.30.20.30
+10.30.20.31
 
 [nodejs-backend]
 10.30.20.40
+10.30.20.41
 
 [dev-stg]
 10.30.20.110
@@ -22,6 +26,7 @@ ansible_ssh_port=1122
 ### DB
 [mysql]
 10.30.20.60
+10.30.20.61
 
 [redis]
 10.30.20.50
