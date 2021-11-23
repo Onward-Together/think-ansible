@@ -1,0 +1,9 @@
+---
+- name: Scan disk vmware
+  shell: |
+    ls /sys/class/scsi_device/ | while read scsidev ; do echo 1 > /sys/class/scsi_device/$scsidev/device/rescan ; done
+
+- name: Resize disk vmware
+  shell: |
+    growpart /dev/sda 4
+    xfs_growfs -d /

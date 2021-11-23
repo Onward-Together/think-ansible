@@ -1,0 +1,5 @@
+- hosts: all
+  strategy: linear
+  become: yes
+  roles:
+    - ../roles/resize-disk
