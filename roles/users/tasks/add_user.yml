@@ -19,4 +19,4 @@
     line: "{{ item.name }} ALL=(ALL) NOPASSWD: ALL"
     state: present
     validate: 'visudo -cf %s'
-    mode: 600
+    mode: 0600
