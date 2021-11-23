@@ -1,0 +1,7 @@
+PidFile=/var/run/zabbix/zabbix_agent2.pid
+LogFile=/var/log/zabbix/zabbix_agent2.log
+LogFileSize=10
+Server=10.30.20.11
+Hostname={{ ansible_hostname }}
+Include=/etc/zabbix/zabbix_agent2.d/*.conf
+ControlSocket= /var/run/zabbix/agent.sock

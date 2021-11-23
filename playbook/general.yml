@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  strategy: linear
+  become: yes
+  roles:
+    - ../roles/general
+    - ../roles/zabbix-agent2

@@ -1,0 +1,15 @@
+[php-backend]
+
+[nodejs-backend]
+
+[loadbalancer]
+
+[mysql]
+
+[redis]
+
+[logging]
+
+[zabbix-server]
+
+[gitlab-runner]

@@ -1,0 +1,15 @@
+---
+- name: Install nginx latest version
+  apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+
+- name: Update main nginx config
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes

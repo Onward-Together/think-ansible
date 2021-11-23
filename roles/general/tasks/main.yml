@@ -1,0 +1,57 @@
+---
+- name: Fix upgrade banner error
+  shell:  truncate -s 0 /var/lib/ubuntu-release-upgrader/release-upgrade-available
+
+- name: Update all packages to their latest version
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Update config multipath to fix spam log
+  blockinfile:
+    path: /etc/multipath.conf
+    block: |
+      blacklist {
+          device {
+              vendor "VMware"
+              product "Virtual disk"
+          }
+      }
+
+- name: Restart multipath-tools service
+  systemd:
+    name: multipath-tools
+    enabled: yes
+    state: restarted
+
+- name: Install general packages
+  apt:
+    pkg:
+      - htop
+      - nload
+      - dnsutils
+      - psmisc
+      - vim
+      - telnet
+      - traceroute
+      - net-tools
+      - tmux
+      - nano
+      - bash-completion
+      - wget
+      - curl
+      - git
+    state: latest
+
+- name: Adjust timezone to Asia/Ho_Chi_Minh
+  file:
+    src: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+    dest: /etc/localtime
+    state: link
+
+- name: Import specific backend tasks
+  import_tasks: backend.yml
+  when:
+    - roles is defined
+    - roles == "backend"
