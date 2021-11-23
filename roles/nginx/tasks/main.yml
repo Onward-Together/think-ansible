@@ -42,7 +42,7 @@
     port: '80'
   when:
     - role is defined
-    - role is "backend"
+    - role == "backend"
 
 - name: Allow http and https access with Loadbalancer
   ufw:
@@ -54,7 +54,7 @@
     - 443  
   when:
     - role is defined
-    - role is "lb"
+    - role == "lb"
 
 - name: Add LB extra config
   copy:
@@ -62,7 +62,7 @@
     dest: /etc/nginx/params
   when:
     - role is defined
-    - role is "lb"
+    - role == "lb"
 
 - name: Add LB extra folder
   file:
@@ -73,4 +73,4 @@
     - /etc/nginx/certs
   when:
     - role is defined
-    - role is "lb"
+    - role == "lb"
