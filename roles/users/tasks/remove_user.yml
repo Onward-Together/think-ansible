@@ -1,0 +1,24 @@
+
+---
+- name: Remove old accounts
+  user:
+    name: "{{ item }}"
+    state: absent
+    remove: yes
+  with_items: "{{ absent_users }}"
+  ignore_errors: yes
+
+- name: Remove old group accounts
+  group:
+    name: "{{ item }}"
+    state: absent
+    remove: yes
+  with_items: "{{ absent_users }}"
+  ignore_errors: yes
+
+- name: Remove sudo config
+  file:
+    path: "/etc/sudoers.d/{{ absent_users }}"
+    state: absent
+  with_items: "{{ absent_users }}"
+  ignore_errors: yes
