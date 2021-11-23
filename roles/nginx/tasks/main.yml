@@ -1,9 +1,12 @@
 ---
+- name: Apt update cache
+  apt:
+    update_cache: yes
+
 - name: Install nginx latest version
   apt:
     name: nginx
     state: latest
-    update_cache: yes
 
 - name: Update main nginx config
   copy:
@@ -49,6 +52,25 @@
   loop:
     - 80
     - 443  
+  when:
+    - role is defined
+    - role is "lb"
+
+- name: Add LB extra config
+  copy:
+    src: params
+    dest: /etc/nginx/params
+  when:
+    - role is defined
+    - role is "lb"
+
+- name: Add LB extra folder
+  file:
+    path: '{{ item }}'
+    state: directory
+  loop:
+    - /etc/nginx/cache
+    - /etc/nginx/certs
   when:
     - role is defined
     - role is "lb"
