@@ -2,11 +2,14 @@
 - name: Fix upgrade banner error
   shell:  truncate -s 0 /var/lib/ubuntu-release-upgrader/release-upgrade-available
 
+- name: Update all cached
+  apt:
+    update_cache: yes
+
 - name: Update all packages to their latest version
   apt:
     name: "*"
     state: latest
-    update_cache: yes
   when:
     - upgrade_all is defined
 
