@@ -3,7 +3,7 @@
   copy:
     src: sshd_config
     dest: /etc/ssh/sshd_config
-    user: root
+    owner: root
     group: root
     mode: '0644'
 
