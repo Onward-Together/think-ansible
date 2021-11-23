@@ -28,6 +28,9 @@
 - name: Install general packages
   apt:
     pkg:
+      - acl
+      - python3-apt
+      - software-properties-common
       - htop
       - nload
       - dnsutils

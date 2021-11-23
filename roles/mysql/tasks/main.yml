@@ -1,0 +1,11 @@
+- name: Install mysql apt repo
+  apt:
+    deb: https://repo.mysql.com//mysql-apt-config_0.8.19-1_all.deb
+
+- name: Install package mysql-server
+  apt:
+    pkg:
+      - mysql-client
+      - mysql-community-server
+      - mysql-server 
+    update_cache: yes

@@ -1,0 +1,15 @@
+- name: "Create folder /home/{{ item.0.name }}/.ssh if not exist"
+  file:
+    path: "/home/{{ item.0.name }}/.ssh"
+    owner: "{{ item.0.name }}"
+    group: "{{ item.0.name }}"
+    mode: 0700
+    state: directory
+
+- name: "Update new authorized_keys for user {{ item.0.name }}"
+  copy:
+    src: "public_keys/{{ item.0.name }}.pub"
+    dest: "/home/{{ item.0.name }}/.ssh/authorized_keys"
+    owner: "{{ item.0.name }}"
+    group: "{{ item.0.name }}"
+    mode: 0600

@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  strategy: linear
+  gather_facts: no
+  become: yes
+  become_method: sudo
+  become_user: deploy
+  roles:
+    - ../roles/nodejs-nvm

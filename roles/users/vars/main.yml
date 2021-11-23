@@ -1,0 +1,44 @@
+---
+
+users:
+######### hoanpv #########
+  - name: hoanpv
+    servers:
+      - 10.30.20.11 # think-zabbix-server
+      - 10.30.20.12 # think-logging
+      - 10.30.20.14 # think-runner
+
+      - 10.30.20.20 # think-lb-01
+
+      - 10.30.20.30 # think-backend-php-01
+      - 10.30.20.40 # think-frontend-nodejs-01
+
+      - 10.30.20.50 # think-redis-01
+      - 10.30.20.60 # think-mysql-01
+
+      - 10.30.20.100 # think-jira
+
+      - 10.30.20.110 # think-dev-staging
+
+    authorized_keys:
+      - hoanpv.pub
+
+######### tuannv #########
+  - name: tuannv
+    servers:
+      - 10.30.20.20 # think-lb-01
+      
+      - 10.30.20.30 # think-backend-php-01
+      - 10.30.20.40 # think-frontend-nodejs-01
+
+      - 10.30.20.50 # think-redis-01
+      - 10.30.20.60 # think-mysql-01
+
+      - 10.30.20.110 # think-dev-staging
+
+    authorized_keys:
+      - tuannv.pub
+
+#----REMOVE USER------------
+absent_users:
+#      - testuser

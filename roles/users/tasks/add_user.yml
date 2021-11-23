@@ -1,0 +1,22 @@
+---
+
+- name: "Create user-group {{ item.name }}"
+  group:
+    name: "{{ item.name }}"
+    state: present
+
+- name: "Add {{ item.name }} to user-group {{ item.name }}"
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.name }}"
+    group: "{{ item.name }}"
+    shell: /bin/bash
+
+- name: "Allow user {{ item.name }} to use sudo without a password"
+  lineinfile:
+    path: "/etc/sudoers.d/{{ item.name }}"
+    create: yes
+    line: "{{ item.name }} ALL=(ALL) NOPASSWD: ALL"
+    state: present
+    validate: 'visudo -cf %s'
+    mode: 600

@@ -1,0 +1,20 @@
+---
+- name: Update SSHD Config
+  copy:
+    src: sshd_config
+    dest: /etc/ssh/sshd_config
+    user: root
+    group: root
+    mode: '0644'
+
+- name: Allow zabbix-server access port zabbix-agent
+  ufw:
+    rule: limit
+    proto: tcp
+    port: '1122'
+
+- name: Restart zabbix-agent2 service
+  systemd:
+    name: zabbix-agent2
+    enabled: yes
+    state: restarted

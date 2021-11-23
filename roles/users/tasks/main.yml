@@ -1,0 +1,26 @@
+---
+
+- include_tasks: add_user.yml
+  with_items:
+    - "{{ users }}"
+  when:
+    - item.servers
+    - inventory_hostname in item.servers
+
+- include_tasks: add_publish_key.yml
+  with_subelements:
+    - "{{ users }}"
+    - authorized_keys
+  when:
+    - item.0.servers
+    - inventory_hostname in item.0.servers
+
+- name: Remove old accounts
+  user:
+    name: "{{ item }}"
+    state: absent
+    remove: yes
+  with_items: "{{ absent_users }}"
+  ignore_errors: yes
+  when:
+    - absent_users

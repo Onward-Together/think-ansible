@@ -1,0 +1,56 @@
+---
+- name: Add PHP stable repository from PPA
+  apt_repository:
+    repo: 'ppa:ondrej/php'
+
+- name: Install php 8.0
+  apt:
+    pkg:
+      - php8.0-bcmath
+      - php8.0-bz2
+      - php8.0-cli
+      - php8.0-common
+      - php8.0-curl
+      - php8.0-fileinfo
+      - php8.0-fpm
+      - php8.0-gd
+      - php8.0-imagick
+      - php8.0-mysqlnd
+      - php8.0-mbstring
+      - php8.0-msgpack
+      - php8.0-pdo
+      - php8.0-redis
+      - php8.0-simplexml
+      - php8.0-soap
+      - php8.0-xml
+      - php8.0-zip
+      - libcurl4-nss-dev
+      - curl-dev
+      - supervisor
+    state: latest
+    update_cache: yes
+
+- name: Install swoole
+  shell: pecl install swoole
+
+- name: Enable swoole in php-cli
+  file:
+    src: /etc/php/8.0/mods-available/swoole.ini
+    dest: /etc/php/8.0/cli/conf.d/20-swoole.ini
+    owner: root
+    group: root
+    state: link
+
+- name: Update supervisor config
+  copy:
+    src: supervisord.conf
+    dest: /etc/supervisor/supervisord.conf
+    owner: root
+    group: root
+    backup: yes
+
+- name: Restart supervisor service
+  systemd:
+    name: supervisor
+    enabled: yes
+    state: restarted

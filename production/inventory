@@ -1,15 +1,34 @@
+### Gateway
+[gateway-internet]
+10.30.20.10
+
+### LB
+[loadbalancer]
+10.30.20.20
+
+### Backend
 [php-backend]
+10.30.20.30
 
 [nodejs-backend]
+10.30.20.40
 
-[loadbalancer]
+[dev-stg]
+10.30.20.110
 
+### DB
 [mysql]
+10.30.20.60
 
 [redis]
+10.30.20.50
 
+# Monitor
 [logging]
+10.30.20.12
 
 [zabbix-server]
+10.30.20.11
 
 [gitlab-runner]
+10.30.20.14
