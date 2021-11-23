@@ -1,0 +1,19 @@
+---
+- name: Add GPG key
+  shell: |
+    wget -qO - https://packages.fluentbit.io/fluentbit.key | sudo apt-key add -
+
+- name: Add apt repo Fluent-bit
+  copy:
+    src: fluent-bit.list
+    dest: /etc/apt/sources.list.d/fluent-bit.list
+
+- name: Apt update cache
+  apt:
+    update_cache: yes
+
+- name: Install td-agent-bit latest version
+  apt:
+    name: td-agent-bit
+    state: latest
+
