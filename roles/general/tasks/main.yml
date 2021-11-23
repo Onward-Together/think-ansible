@@ -47,6 +47,7 @@
       - wget
       - curl
       - git
+      - cloud-utils
     state: latest
 
 - name: Adjust timezone to Asia/Ho_Chi_Minh
