@@ -105,6 +105,14 @@ users:
 
     authorized_keys:
       - hoatq.pub
+
+######### haibv #########
+  - name: haibv
+    servers:
+      - 10.30.20.110 # think-dev-staging
+
+    authorized_keys:
+      - haibv.pub
 #----REMOVE USER------------
 absent_users:
 #      - testuser
