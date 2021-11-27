@@ -26,12 +26,12 @@
       - php8.0-zip
       - libcurl4-nss-dev
       - supervisor
-      - pecl
+      - php8.0-dev
     state: latest
     update_cache: yes
 
 - name: Install swoole
-  shell: pecl install swoole
+  shell: pecl install openswoole
 
 - name: Enable swoole in php-cli
   file:
