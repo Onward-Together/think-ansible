@@ -3,3 +3,8 @@
 
 - name: Install nvm
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+- name: Install node 14.18.0 and pm2
+  shell: |
+    nvm install 14.18.0
+    npm install -g pm2
