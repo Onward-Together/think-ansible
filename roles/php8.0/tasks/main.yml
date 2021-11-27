@@ -25,7 +25,6 @@
       - php8.0-xml
       - php8.0-zip
       - libcurl4-nss-dev
-      - curl-dev
       - supervisor
     state: latest
     update_cache: yes
