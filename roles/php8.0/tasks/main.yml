@@ -26,6 +26,7 @@
       - php8.0-zip
       - libcurl4-nss-dev
       - supervisor
+      - pecl
     state: latest
     update_cache: yes
 
