@@ -23,20 +23,22 @@ ansible_ssh_port=1122
 [dev-stg]
 10.30.20.110
 
+[dev-stg-mysql]
+10.30.20.116
 ### DB
+[redis]
+10.30.20.50
+
 [mysql]
 10.30.20.60
 10.30.20.61
 
-[redis]
-10.30.20.50
-
 # Monitor
 [logging]
-10.30.20.12
+10.30.20.15
 
 [zabbix-server]
-10.30.20.11
+10.30.20.16
 
 [gitlab-runner]
 10.30.20.14
