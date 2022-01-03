@@ -4,7 +4,6 @@
   group:
     name: "{{ item }}"
     state: absent
-    remove: yes
   with_items: "{{ absent_users }}"
   ignore_errors: yes
 
@@ -12,10 +11,8 @@
   user:
     name: "{{ item }}"
     state: absent
-    remove: yes
   with_items: "{{ absent_users }}"
   ignore_errors: yes
-
 
 - name: Remove sudo config
   file:
