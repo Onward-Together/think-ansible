@@ -86,15 +86,15 @@ users:
     authorized_keys:
       - tuannv.pub
 
-######### hoangph #########
-  - name: hoangph
-    servers:
-      - 10.30.20.30 # think-backend-php-01
-      - 10.30.20.40 # think-frontend-nodejs-01
-      - 10.30.20.110 # think-dev-staging
+# ######### hoangph #########
+#   - name: hoangph
+#     servers:
+#       - 10.30.20.30 # think-backend-php-01
+#       - 10.30.20.40 # think-frontend-nodejs-01
+#       - 10.30.20.110 # think-dev-staging
 
-    authorized_keys:
-      - hoangph.pub
+#     authorized_keys:
+#       - hoangph.pub
 
 ######### nguyenvc #########
   - name: nguyenvc
@@ -121,8 +121,11 @@ users:
     servers:
       - 10.30.20.110 # think-dev-staging
 
+      - 10.30.20.30 # think-backend-php-01
+      - 10.30.20.31 # think-backend-php-02
+
     authorized_keys:
       - haibv.pub
 #----REMOVE USER------------
 absent_users:
-#      - testuser
+  - hoangph
