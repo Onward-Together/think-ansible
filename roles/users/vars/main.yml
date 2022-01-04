@@ -97,14 +97,14 @@ users:
 #       - hoangph.pub
 
 ######### nguyenvc #########
-  - name: nguyenvc
-    servers:      
-      - 10.30.20.30 # think-backend-php-01
-      - 10.30.20.40 # think-frontend-nodejs-01
-      - 10.30.20.110 # think-dev-staging
+  # - name: nguyenvc
+  #   servers:      
+  #     - 10.30.20.30 # think-backend-php-01
+  #     - 10.30.20.40 # think-frontend-nodejs-01
+  #     - 10.30.20.110 # think-dev-staging
 
-    authorized_keys:
-      - nguyenvc.pub
+  #   authorized_keys:
+  #     - nguyenvc.pub
 
 ######### hoatq #########
   - name: hoatq
@@ -129,3 +129,4 @@ users:
 #----REMOVE USER------------
 absent_users:
   - hoangph
+  - nguyenvc
