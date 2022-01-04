@@ -1,14 +1,14 @@
 
 ---
-- name: Remove old group accounts
-  group:
+- name: Remove old accounts
+  user:
     name: "{{ item }}"
     state: absent
   with_items: "{{ absent_users }}"
   ignore_errors: yes
 
-- name: Remove old accounts
-  user:
+- name: Remove old group accounts
+  group:
     name: "{{ item }}"
     state: absent
   with_items: "{{ absent_users }}"
