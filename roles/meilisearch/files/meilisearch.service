@@ -1,0 +1,14 @@
+[Unit]
+Description=MeiliSearch search engine
+After=network.target
+
+[Service]
+User=meilisearch
+Group=meilisearch
+Environment=MEILI_DB_PATH=/var/lib/meilisearch/data.ms
+Environment=MEILI_DUMPS_DIR=/var/lib/meilisearch/dumps/
+ExecStart=/usr/bin/meilisearch --http-addr 0.0.0.0:7700 --env production --master-key pwd123
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

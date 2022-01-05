@@ -1,0 +1,43 @@
+- name: Add apt repo Meilisearch
+  copy:
+    src: meilisearch.list
+    dest: /etc/apt/sources.list.d/meilisearch.list
+
+- name: Install package meilisearch-http
+  apt:
+    name: meilisearch-http
+    update_cache: yes
+
+- name: Create meilisearch data folder
+  file:
+    path: /var/lib/meilisearch
+    state: directory
+    mode: '0755'
+    owner: meilisearch
+    group: meilisearch
+  
+- name: Create user-group meilisearch
+  group:
+    name: meilisearch
+    state: present
+
+- name: Create user meilisearch
+  user:
+    name: meilisearch
+    group: meilisearch
+    shell: /sbin/nologin
+    home: /var/lib/meilisearch
+
+- name: Add systemd service unit
+  copy:
+    src: meilisearch.service
+    dest: /etc/systemd/system/meilisearch.service
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: Enable service meilisearch and ensure it start with system
+  systemd:
+    name: meilisearch
+    enabled: yes
