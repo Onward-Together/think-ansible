@@ -7,14 +7,6 @@
   apt:
     name: meilisearch-http
     update_cache: yes
-
-- name: Create meilisearch data folder
-  file:
-    path: /var/lib/meilisearch
-    state: directory
-    mode: '0755'
-    owner: meilisearch
-    group: meilisearch
   
 - name: Create user-group meilisearch
   group:
@@ -27,6 +19,14 @@
     group: meilisearch
     shell: /sbin/nologin
     home: /var/lib/meilisearch
+
+- name: Create meilisearch data folder
+  file:
+    path: /var/lib/meilisearch
+    state: directory
+    mode: '0755'
+    owner: meilisearch
+    group: meilisearch
 
 - name: Add systemd service unit
   copy:
