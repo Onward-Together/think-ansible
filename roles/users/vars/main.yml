@@ -33,37 +33,6 @@ users:
 
     authorized_keys:
       - hoanpv.pub
-
-######### kiennd #########
-  - name: kiennd
-    servers:
-      - 10.30.20.11 # think-zabbix-server
-      - 10.30.20.12 # think-logging
-      - 10.30.20.14 # think-runner
-
-      - 10.30.20.15 # think-gateway-02
-
-      - 10.30.20.20 # think-lb-01
-      - 10.30.20.21 # think-lb-02
-
-      - 10.30.20.30 # think-backend-php-01
-      - 10.30.20.31 # think-backend-php-02
-
-      - 10.30.20.40 # think-frontend-nodejs-01
-      - 10.30.20.41 # think-frontend-nodejs-02
-
-      - 10.30.20.50 # think-redis-01
-
-      - 10.30.20.60 # think-mysql-01
-      - 10.30.20.61 # think-mysql-02
-
-      - 10.30.20.71 # think-meilisearch-02
-
-      - 10.30.20.100 # think-jira
-
-      - 10.30.20.110 # think-dev-staging
-    authorized_keys:
-      - kiennd.pub
       
 ######### tuannv #########
   - name: tuannv
@@ -103,14 +72,28 @@ users:
 ######### haibv #########
   - name: haibv
     servers:
-      - 10.30.20.110 # think-dev-staging
+      - 10.30.20.20 # think-lb-01
+      - 10.30.20.21 # think-lb-02
 
       - 10.30.20.30 # think-backend-php-01
       - 10.30.20.31 # think-backend-php-02
 
+      - 10.30.20.40 # think-frontend-nodejs-01
+      - 10.30.20.41 # think-frontend-nodejs-02
+
+      - 10.30.20.50 # think-redis-01
+
+      - 10.30.20.60 # think-mysql-01
+      - 10.30.20.61 # think-mysql-02
+
+      - 10.30.20.71 # think-meilisearch-02
+
+      - 10.30.20.110 # think-dev-staging
+      - 10.30.20.116 # think-dev-stg-mysql-02
     authorized_keys:
       - haibv.pub
 #----REMOVE USER------------
 absent_users:
   - hoangph
   - nguyenvc
+  - kiennd
