@@ -34,7 +34,7 @@ ansible_ssh_port=1122
 10.30.20.61
 
 [meilisearch]
-10.30.20.61
+10.30.20.71
 
 # Monitor
 [logging]
