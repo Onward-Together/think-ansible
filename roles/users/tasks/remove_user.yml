@@ -14,6 +14,13 @@
   with_items: "{{ absent_users }}"
   ignore_errors: yes
 
+- name: Remove home folder
+  file:
+    path: "/home/{{ absent_users }}"
+    state: absent
+  with_items: "{{ absent_users }}"
+  ignore_errors: yes
+
 - name: Remove sudo config
   file:
     path: "/etc/sudoers.d/{{ absent_users }}"
