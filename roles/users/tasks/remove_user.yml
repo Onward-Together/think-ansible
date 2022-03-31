@@ -16,14 +16,14 @@
 
 - name: Remove home folder
   file:
-    path: "/home/{{ absent_users }}"
+    path: "/home/{{ item }}"
     state: absent
   with_items: "{{ absent_users }}"
   ignore_errors: yes
 
 - name: Remove sudo config
   file:
-    path: "/etc/sudoers.d/{{ absent_users }}"
+    path: "/etc/sudoers.d/{{ item }}"
     state: absent
   with_items: "{{ absent_users }}"
   ignore_errors: yes
