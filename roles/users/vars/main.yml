@@ -33,31 +33,6 @@ users:
 
     authorized_keys:
       - hoanpv.pub
-      
-######### tuannv #########
-  - name: tuannv
-    servers:
-      - 10.30.20.20 # think-lb-01
-      - 10.30.20.21 # think-lb-02
-      
-      - 10.30.20.30 # think-backend-php-01
-      - 10.30.20.31 # think-backend-php-02
-
-      - 10.30.20.40 # think-frontend-nodejs-01
-      - 10.30.20.41 # think-frontend-nodejs-02
-
-      - 10.30.20.50 # think-redis-01
-
-      - 10.30.20.60 # think-mysql-01
-      - 10.30.20.61 # think-mysql-02
-
-      - 10.30.20.71 # think-meilisearch-02
-
-      - 10.30.20.110 # think-dev-staging
-      - 10.30.20.116 # think-dev-stg-mysql-02
-
-    authorized_keys:
-      - tuannv.pub
 
 ######### hoatq #########
   - name: hoatq
@@ -97,3 +72,4 @@ absent_users:
   - hoangph
   - nguyenvc
   - kiennd
+  - tuannv
