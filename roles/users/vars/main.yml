@@ -24,6 +24,8 @@ users:
       - 10.30.20.60 # think-mysql-01
       - 10.30.20.61 # think-mysql-02
 
+      - 10.30.20.65 # think-mongodb-02
+
       - 10.30.20.71 # think-meilisearch-02
 
       - 10.30.20.100 # think-jira
@@ -60,6 +62,8 @@ users:
 
       - 10.30.20.60 # think-mysql-01
       - 10.30.20.61 # think-mysql-02
+
+      - 10.30.20.65 # think-mongodb-02
 
       - 10.30.20.71 # think-meilisearch-02
 
