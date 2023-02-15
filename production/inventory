@@ -9,46 +9,54 @@ ansible_ssh_port=1122
 ### LB
 [loadbalancer]
 10.30.20.20
-10.30.20.21
+#10.30.20.21
 
 ### Backend
 [php-backend]
 10.30.20.30
-10.30.20.31
+#10.30.20.31
 
 [nodejs-backend]
 10.30.20.40
-10.30.20.41
+#10.30.20.41
 
 [dev-stg]
 10.30.20.110
 
-[dev-stg-mysql]
-10.30.20.116
+#[dev-stg-mysql]
+#10.30.20.116
 ### DB
 [redis]
 10.30.20.50
 
 [mysql]
 10.30.20.60
-10.30.20.61
+#10.30.20.61
 
-[mongodb]
-10.30.20.65
+#[mongodb]
+#10.30.20.65
 
-[meilisearch]
-10.30.20.71
+#[meilisearch]
+#10.30.20.71
 
 # Monitor
 [logging]
 10.30.20.15
 
-[zabbix-server]
-10.30.20.16
+#[zabbix-server]
+#10.30.20.16
 
 [gitlab-runner]
 10.30.20.14
 
 # Jira
-[jira]
-10.30.20.100
+#[jira]
+#10.30.20.100
+
+[rancher]
+10.30.20.120
+
+[dev-k8s]
+10.30.20.121
+10.30.20.122
+10.30.20.123
