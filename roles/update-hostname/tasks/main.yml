@@ -1,0 +1,17 @@
+---
+
+- name: Change hostname server
+  shell: hostnamectl set-hostname {{ vm_name }}
+
+- name: Remove old hostname in /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    state: absent
+    regexp: '^127\.0\.1\.1'
+
+- name: Update hostname in /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    state: present
+    line: '127.0.1.1 {{ vm_name }}'
+    insertafter: '127.0.0.1 localhost'

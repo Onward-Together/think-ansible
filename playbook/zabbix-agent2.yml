@@ -4,5 +4,4 @@
   strategy: linear
   become: yes
   roles:
-    - ../roles/general
-#    - ../roles/zabbix-agent2
+    - ../roles/zabbix-agent2

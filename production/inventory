@@ -54,9 +54,9 @@ ansible_ssh_port=1122
 #10.30.20.100
 
 [rancher]
-10.30.20.120
+10.30.20.120 vm_name=think-rancher
 
 [dev-k8s]
-10.30.20.121
-10.30.20.122
-10.30.20.123
+10.30.20.121 vm_name=think-dev-k8s-01
+10.30.20.122 vm_name=think-dev-k8s-02
+10.30.20.123 vm_name=think-dev-k8s-03

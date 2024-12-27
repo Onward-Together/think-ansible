@@ -1,0 +1,6 @@
+- hosts: all
+  strategy: linear
+  gather_facts: no
+  become: yes
+  roles:
+    - ../roles/update-hostname

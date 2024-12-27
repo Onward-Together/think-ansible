@@ -1,0 +1,41 @@
+---
+
+- name: Run ufw allow
+  shell: "ufw {{ item }}"
+  args:
+    executable: /bin/bash
+  loop:
+#   - allow from 10.233.0.0/18 comment 'Allow K8S service range ip'
+#   - allow from 10.233.64.0/18 comment 'Allow K8S pod range ip'
+#   - allow 30000:32000/tcp comment 'Allow K8S nodeport service range'
+#   - allow from 10.30.20.121 comment 'Allow think-dev-k8s-01'
+#   - allow from 10.30.20.122 comment 'Allow think-dev-k8s-02'
+#   - allow from 10.30.20.123 comment 'Allow think-dev-k8s-03'
+#   - allow from 10.30.20.124 comment 'Allow think-dev-k8s-wrk-01'
+#   - allow from 10.30.20.125 comment 'Allow think-dev-k8s-wrk-02'
+#   - allow from 10.30.20.126 comment 'Allow think-dev-k8s-wrk-03'
+#   - allow from 10.30.20.127 comment 'Allow think-dev-k8s-wrk-stg-01'
+#   - allow from 10.30.20.128 comment 'Allow think-dev-k8s-wrk-stg-02'
+   - allow from 10.30.20.150 comment 'Allow mehub-k8s-wrk-01'
+   - allow from 10.30.20.151 comment 'Allow mehub-k8s-wrk-02'
+
+#   - allow 80/tcp comment 'Allow Port HTTP'
+#   - allow 443/tcp comment 'Allow Port HTTPs'
+#   - allow 6379/tcp comment 'Allow Port Redis'
+#   - allow 3000/tcp comment 'Allow Port NodeJS App'
+
+#- name: Update DNS /etc/hosts with registry.thinkpro.vn
+#  lineinfile:
+#    path: /etc/hosts
+#    line: 10.30.20.20 registry.thinkpro.vn
+
+#- name: Update DNS /etc/hosts
+#  blockinfile:
+#    path: /etc/hosts
+#    block: |
+#      10.30.20.121 think-dev-k8s-01.cluster.local think-dev-k8s-01
+#      10.30.20.122 think-dev-k8s-02.cluster.local think-dev-k8s-02
+#      10.30.20.123 think-dev-k8s-03.cluster.local think-dev-k8s-03
+#      10.30.20.124 think-dev-k8s-wrk-01.cluster.local think-dev-k8s-wrk-01
+#      10.30.20.125 think-dev-k8s-wrk-02.cluster.local think-dev-k8s-wrk-02
+#      10.30.20.126 think-dev-k8s-wrk-03.cluster.local think-dev-k8s-wrk-03

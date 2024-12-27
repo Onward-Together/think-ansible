@@ -2,6 +2,7 @@
 - name: Scan disk vmware
   shell: |
     ls /sys/class/scsi_device/ | while read scsidev ; do echo 1 > /sys/class/scsi_device/$scsidev/device/rescan ; done
+#  when: hot_resize is defined
 
 - name: Resize disk vmware
   shell: |

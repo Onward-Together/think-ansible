@@ -1,0 +1,23 @@
+[all:vars]
+ansible_ssh_port=1122
+ansible_ssh_user=ubuntu
+ansible_ssh_password=think123
+ansible_become_pass=think123
+upgrade_all=true
+
+[rancher]
+
+10.30.20.121 vm_name=think-dev-k8s-01
+10.30.20.122 vm_name=think-dev-k8s-02
+10.30.20.123 vm_name=think-dev-k8s-03
+
+10.30.20.124 vm_name=think-dev-k8s-wrk-01
+10.30.20.125 vm_name=think-dev-k8s-wrk-02
+10.30.20.126 vm_name=think-dev-k8s-wrk-03
+
+10.30.20.127 vm_name=think-dev-k8s-wrk-stg-01
+10.30.20.128 vm_name=think-dev-k8s-wrk-stg-02
+
+#10.30.20.150 vm_name=mehub-k8s-wrk-01
+#10.30.20.151 vm_name=mehub-k8s-wrk-02
+

@@ -1,0 +1,9 @@
+[all:vars]
+ansible_ssh_port=1122
+#ansible_ssh_user=ubuntu
+#ansible_ssh_password=think123
+#ansible_become_pass=think123
+#upgrade_all=true
+
+[rancher]
+10.30.20.70

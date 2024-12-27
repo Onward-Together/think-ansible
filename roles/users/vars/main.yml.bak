@@ -1,0 +1,104 @@
+---
+
+users:
+######### hoanpv #########
+  - name: hoanpv
+    servers:
+      - 10.30.20.14 # think-runner
+      - 10.30.20.15 # think-logging
+
+      - 10.30.20.20 # think-lb-01
+      - 10.30.20.21 # think-lb-02
+
+      - 10.30.20.30 # think-backend-php-01
+      - 10.30.20.40 # think-frontend-nodejs-01
+
+      - 10.30.20.50 # think-redis-01
+
+#      - 10.30.20.60 # think-mysql-01
+      - 10.30.20.61 # think-mysql-02
+
+      - 10.30.20.70 # think-storage-01
+#      - 10.30.20.71 # think-storage-02
+
+      - 10.30.20.110 # think-dev-staging
+
+      - 10.30.20.119 # think-registry
+      - 10.30.20.120 # think-rancher
+      - 10.30.20.121 # dev-think-k8s-01
+      - 10.30.20.122 # dev-think-k8s-02
+      - 10.30.20.123 # dev-think-k8s-03
+      - 10.30.20.124 # dev-think-k8s-wrk-01
+      - 10.30.20.125 # dev-think-k8s-wrk-02
+      - 10.30.20.126 # dev-think-k8s-wrk-03
+      - 10.30.20.127 # think-dev-k8s-wrk-stg-01
+      - 10.30.20.128 # think-dev-k8s-wrk-stg-02
+
+
+## Mehub
+      - 10.30.20.112 # mehub-dev-staging
+
+      - 10.30.20.150 # mehub-k8s-wrk-01
+      - 10.30.20.151 # mehub-k8s-wrk-02
+      - 10.30.20.160 # mehub-mariadb
+
+    authorized_keys:
+      - hoanpv.pub
+
+######### hoatq #########
+  - name: hoatq
+    servers:      
+      - 10.30.20.30 # think-backend-php-01
+      - 10.30.20.40 # think-frontend-nodejs-01
+      - 10.30.20.110 # think-dev-staging
+
+    authorized_keys:
+      - hoatq.pub
+
+######### haibv #########
+  - name: haibv
+    servers:
+      - 10.30.20.20 # think-lb-01
+      - 10.30.20.21 # think-lb-02
+
+      - 10.30.20.30 # think-backend-php-01
+#      - 10.30.20.31 # think-backend-php-02
+
+      - 10.30.20.40 # think-frontend-nodejs-01
+#      - 10.30.20.41 # think-frontend-nodejs-02
+
+      - 10.30.20.50 # think-redis-01
+
+      - 10.30.20.60 # think-mysql-01
+      - 10.30.20.61 # think-mysql-02
+
+      - 10.30.20.110 # think-dev-staging
+
+      - 10.30.20.70 # think-storage-01
+
+      - 10.30.20.119 # think-registry
+      - 10.30.20.120 # think-rancher
+      - 10.30.20.121 # dev-think-k8s-01
+      - 10.30.20.122 # dev-think-k8s-02
+      - 10.30.20.123 # dev-think-k8s-03
+      - 10.30.20.124 # dev-think-k8s-wrk-01
+      - 10.30.20.125 # dev-think-k8s-wrk-02
+      - 10.30.20.126 # dev-think-k8s-wrk-03
+      - 10.30.20.127 # think-dev-k8s-wrk-stg-01
+      - 10.30.20.128 # think-dev-k8s-wrk-stg-02
+
+## Mehub
+      - 10.30.20.112 # mehub-dev-staging
+
+      - 10.30.20.150 # mehub-k8s-wrk-01
+      - 10.30.20.151 # mehub-k8s-wrk-02
+      - 10.30.20.160 # mehub-mariadb
+
+    authorized_keys:
+      - haibv.pub
+#----REMOVE USER------------
+absent_users:
+  - hoangph
+  - nguyenvc
+  - kiennd
+  - tuannv
